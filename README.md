@@ -84,6 +84,7 @@ Navigate to /contact to send a message.
 Optionally configure email sending in the contact route by uncommenting and configuring the mail.send_message line.
 
 7. **File Structure**
+   
 main.py: Main application file.
 configure.json: Configuration file for the application.
 requirements.txt: List of Python dependencies.
@@ -91,7 +92,9 @@ templates/: Directory containing HTML templates.
 static/: Directory for static files (CSS, JavaScript, images).
 
 8. **Contributing**
+    
 Feel free to fork the repository and submit pull requests. Contributions are welcome!
 
 9. **License**
+ 
 This project is licensed under the MIT License.
