@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Clean Blog</h1>
+                            <span class="subheading">Discover the Latest in Technology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+
+                    {% for post in posts %}
+                    <div class="post-preview">
+                        <a href="post/{{post.slug}}">
+                            <h2 class="post-title">{{post.title}}</h2>
+                            <h3 class="post-subtitle">{{post.content[:100]}}...</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">TejoVK311</a>
+                            on {{post.date}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                    
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-between mb-4">
+                        {% if prev != '#' %}
+                            <a class="btn btn-primary text-uppercase me-2" href="{{ prev }}">&larr; Previous</a>
+                        {% else %}
+                            <a class="btn btn-primary text-uppercase me-2 disabled" href="#">&larr; Previous</a>
+                        {% endif %}
+                        
+                        {% if next != '#' %}
+                            <a class="btn btn-primary text-uppercase ms-2" href="{{ next }}">Next &rarr;</a>
+                        {% else %}
+                            <a class="btn btn-primary text-uppercase ms-2 disabled" href="#">Next &rarr;</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
