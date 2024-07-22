@@ -49,32 +49,6 @@ class Posts(db.Model):
 with app.app_context():
     db.create_all()
 
-# Routes
-# @app.route('/')
-# def home():
-#     posts = Posts.query.all()
-#     last = len(posts)//params['no_of_posts']
-    
-#     page = int(request.args.get('page'))
-#     if (str(page).isdigit()):
-#         page = 0
-    
-#     if (page==1):
-#         prev = '#'
-#         next = '/?number='+str(page+1)
-        
-#     elif (page==last):
-#         prev = '/?number='+str(page-1)
-#         next = '#'
-    
-#     else:
-#         prev = '/?number='+str(page-1)
-#         next = '/?number='+str(page+1)
-
-#     return render_template('index.html', params=params, posts=posts)
-
-
-
 @app.route('/')
 def home():
     posts_per_page = params.get('no_of_posts', 10)  # Default to 10 posts per page if not specified
